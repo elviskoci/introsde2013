@@ -20,7 +20,7 @@
 <project name="lab2/Ex2" basedir="." default="generate.service">
 
     <property environment="env"/>
-    <property name="AXIS2_HOME" value="/opt/axis2-1.6.2"/>
+    <property name="AXIS2_HOME" value="C:/axis2-1.6.2"/>
 
     <property name="build.dir" value="build"/>
 
