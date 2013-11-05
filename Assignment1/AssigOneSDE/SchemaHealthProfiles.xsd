@@ -3,7 +3,7 @@
 		<xsd:sequence>
             <xsd:element name="firstname" type="xsd:string"/>
             <xsd:element name="lastname"  type="xsd:string"/>
-            <xsd:element name="healthprofile" type="healthProfileType"/>	
+            <xsd:element ref="healthprofile" />	
         </xsd:sequence>
 	</xsd:group>
 	<xsd:complexType name="personType">
@@ -17,11 +17,12 @@
             <xsd:element name="height"  type="xsd:decimal"/>
         </xsd:sequence>
     </xsd:complexType>
-	<xsd:element name="people">
-		<xsd:complexType>
-			<xsd:sequence>
-				<xsd:element name="person" type="personType" maxOccurs="unbounded"/>
-			</xsd:sequence>
-		</xsd:complexType>
-	</xsd:element>
+	<xsd:complexType name="peopleType" >
+		<xsd:sequence>
+			<xsd:element ref="person" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="people" type="peopleType" />
+	<xsd:element name="healthprofile" type="healthProfileType"/>
+	<xsd:element name="person" type="personType"/>
 </xsd:schema>
